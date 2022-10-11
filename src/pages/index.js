@@ -11,6 +11,7 @@ import Image from "next/image";
 // import { LangJson } from "configs";
 import { Assets } from "../assets";
 import { useRouter } from "next/router";
+import { Section } from "../components";
 
 export default function Home() {
   const openPopupMenu = () => setPopupMenuShow(true);
@@ -136,14 +137,6 @@ export default function Home() {
                           className="flex flex-row items-center space-x-1"
                           key={index}
                         >
-                          <div className="relative">
-                            <Image
-                              src={language.icon}
-                              alt={`logo ${language.name}`}
-                              width={24}
-                              height={24}
-                            />
-                          </div>
                           <span className="uppercase">{language.name}</span>
                         </div>
                       );
@@ -153,7 +146,7 @@ export default function Home() {
                 </div>
                 {showOptions && (
                   <div
-                    className="absolute right-0 top-14 w-full  justify-center rounded-md  border border-[#1EC01E] bg-black/40 flex text-sm font-medium text-white focus:outline-none"
+                    className="absolute right-0 flex justify-center w-full text-sm font-medium text-white rounded-md top-14 focus:outline-none"
                     role="menu"
                   >
                     <div>
@@ -182,15 +175,26 @@ export default function Home() {
                   </div>
                 )}
               </div> */}
+              <button className="relative block -right-10 md:hidden">
+                <div className="flex items-center justify-end">
+                  <h2 className="text-xs text-black uppercase">En</h2>
+                  <ChevronRightIcon className="w-4 h-4" />
+                </div>
+              </button>
               <button
                 type="button"
-                className="block lg:hidden "
+                className="block md:hidden "
                 onClick={() => {
                   popupMenuShow ? closePopupMenu() : openPopupMenu();
                 }}
               >
                 <div className="relative w-full h-full">
-                  <Image src={Assets.HamburgerBar} alt="Hamburger Bar" />
+                  <Image
+                    src={Assets.HamburgerBar}
+                    alt="Hamburger Bar"
+                    width={32}
+                    height={32}
+                  />
                 </div>
               </button>
               {/* <NavMobile
@@ -203,6 +207,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* <Section /> */}
       <div className="flex items-center h-full px-4 mx-auto md:max-w-5xl">
         <div className="flex flex-col space-y-0 md:space-y-2">
           <h2 className="uppercase text-[#343434] text-[3rem] md:text-[4rem] font-fjalla tracking-wider">

@@ -1,3 +1,5 @@
+import { Footer } from "../components/organisms/Footer";
+
 if (process.env.NODE_ENV !== "production") {
   require("../assets/styles/globals.css");
 } else {

@@ -6,3 +6,5 @@ export { default as Decor } from "./logoDecor.png";
 export { default as Diesel } from "./logoDiesel.png";
 export { default as Zara } from "./logoZara.png";
 export { default as Blog } from "./logoBlog.png";
+export { default as HamburgerBar } from "./HamburgerBar.svg";
+export { default as CloseBar } from "./CloseBar.svg";
