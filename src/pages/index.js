@@ -226,7 +226,7 @@ export default function Home() {
           </div>
         </div>
         {/* <Section /> */}
-        <div className="flex items-center h-screen px-4 mx-auto md:max-w-5xl">
+        <div className="flex items-center h-screen px-4 pt-10 mx-auto md:max-w-5xl">
           <div className="absolute left-0 hidden md:block">
             <Image src={Assets.Hero} alt="Hero" width={1500} height={800} />
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col justify-center max-w-6xl px-4 mx-auto ">
-          <div className="flex justify-center flex-col space-y-4 -top-[2rem] md:-top-[6rem] relative">
+          <div className="flex justify-center flex-col space-y-4 -top-[0rem] md:-top-[6rem] relative">
             <div className="flex flex-col space-y-4 md:flex-row md:space-x-6 md:space-y-0">
               <div className="bg-[#44C1B7] w-full md:w-[34rem] md:h-[15rem] flex items-center justify-center relative">
                 <span className="text-white uppercase font-fjalla text-[4rem] md:text-[7rem] opacity-10 absolute">
