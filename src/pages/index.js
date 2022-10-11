@@ -1,5 +1,10 @@
 import React from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  MapPinIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { Assets } from "../assets";
 
@@ -123,6 +128,98 @@ export default function Home() {
             </div>
             <div className="md:h-[14rem] md:w-[14rem] bg-white border-2 border-gray-200 hover:scale-95  md:block hidden">
               <Image src={Assets.Zara} alt="Logo Decor" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full py-10 bg-[#343434] flex-col md:flex-row flex md:px-[4rem]">
+        <div className="flex flex-col space-y-[2rem] md:flex-row max-w-6xl px-4 mx-auto md:space-x-[10rem] md:space-y-0">
+          <div className="flex flex-col space-y-6 w-full md:w-[35%]">
+            <h2 className="text-xl tracking-wide text-white uppercase font-fjalla">
+              Subscribe To Oue Newsletter
+            </h2>
+            <div className="flex flex-row space-x-4">
+              <div className="">
+                <input
+                  type="text"
+                  placeholder="Your E-Mail"
+                  className="p-2 text-xs font-bold uppercase bg-transparent border-[0.1rem] border-[#848484] outline-none placeholder-[#848484]"
+                />
+              </div>
+              <button className="bg-[#414141] w-[8rem] py-2 border-[0.1rem] border-[#414141] text-[#848484] uppercase font-body text-xs font-bold hover:scale-95 outline-none">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-xs md:text-xs font-body text-[#C7C7C7] w-full">
+              Donaki is luisquam est, qui dolorem ipsum quia dolor sit amet,
+              consectur, adipisci velit, sed quia non numquam
+            </p>
+          </div>
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-xl tracking-wide text-white uppercase font-fjalla">
+              Follow Us
+            </h2>
+            <div className="relative flex flex-row space-x-4 -left-2">
+              <div className="flex items-center justify-center">
+                <a href="# ">
+                  <Image
+                    src={Assets.Pinterest}
+                    alt="Logo Pinterest"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              </div>
+              <div className="flex items-center justify-center">
+                <a href="# ">
+                  <Image
+                    src={Assets.Facebook}
+                    alt="Logo Facebook"
+                    width={30}
+                    height={30}
+                  />
+                </a>
+              </div>
+              <div className="flex items-center justify-center">
+                <a href="# ">
+                  <Image
+                    src={Assets.Instagram}
+                    alt="Logo Instagram"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              </div>
+              <div className="relative flex items-center justify-center w-8 h-6 pt-1 bg-white rounded-lg top-1">
+                <a href="# ">
+                  <Image
+                    src={Assets.Blog}
+                    alt="Logo Blog"
+                    width={24}
+                    height={16}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col space-y-6">
+            <h2 className="text-xl tracking-wide text-white uppercase font-fjalla">
+              Contact Us
+            </h2>
+            <div className="flex flex-col space-y-6">
+              <div className="flex flex-row space-x-2 space-y-2">
+                <MapPinIcon className="w-5 h-5 text-[#C7C7C7]" />
+                <span className="text-[#C7C7C7] text-xs w-[60%] font-body">
+                  Rue de la Loi/Westraat 175 B-1048
+                  Bruxelles/Brussei/Belgique/elgie
+                </span>
+              </div>
+              <div className="flex flex-row space-x-2">
+                <PhoneIcon className="w-5 h-5 text-[#C7C7C7] font-body" />
+                <span className="text-[#C7C7C7] text-xs w-[60%]">
+                  Tel: +32 22252522
+                </span>
+              </div>
             </div>
           </div>
         </div>

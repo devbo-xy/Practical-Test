@@ -5,3 +5,4 @@ export { default as Donaki } from "./logoDonaki.svg";
 export { default as Decor } from "./logoDecor.png";
 export { default as Diesel } from "./logoDiesel.png";
 export { default as Zara } from "./logoZara.png";
+export { default as Blog } from "./logoBlog.png";
