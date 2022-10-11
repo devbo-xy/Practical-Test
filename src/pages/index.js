@@ -283,7 +283,7 @@ export default function Home() {
                 <span className="text-white uppercase font-fjalla text-[4rem] md:text-[7rem] opacity-10 absolute">
                   Member
                 </span>
-                <div className="z-10 flex items-center w-full h-full px-10 py-5 ">
+                <div className="z-10 flex items-center w-full h-full px-4 py-5 md:px-10">
                   <div className="flex flex-col space-y-4">
                     <h2 className="text-base tracking-wider text-white uppercase font-fjalla md:text-3xl">
                       Become a Member
@@ -364,7 +364,7 @@ export default function Home() {
           <div className="flex flex-col space-y-[2rem] md:flex-row max-w-6xl px-4 mx-auto md:space-x-[10rem] md:space-y-0">
             <div className="flex flex-col space-y-6 w-full md:w-[35%]">
               <h2 className="text-xl tracking-wide text-white uppercase font-fjalla">
-                Subscribe To Oue Newsletter
+                Subscribe To Our Newsletter
               </h2>
               <div className="flex flex-row space-x-4">
                 <div className="">
