@@ -299,7 +299,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-[99.5%] bg-white h-[18rem] flex items-center px-4 md:px-10 overflow-hidden relative">
-              <div className="absolute left-0">
+              <div className="absolute left-0 hidden md:block">
                 <Image
                   src={Assets.About}
                   alt="Hero"
@@ -418,7 +418,7 @@ export default function Home() {
                     />
                   </a>
                 </div>
-                <div className="relative flex items-center justify-center w-8 h-6 pt-1 bg-white rounded-lg top-1">
+                <div className="relative flex items-center justify-center w-8 h-8 pt-1 bg-white rounded-lg md:w-8 md:h-6 top-1">
                   <a href="# ">
                     <Image
                       src={Assets.Blog}
