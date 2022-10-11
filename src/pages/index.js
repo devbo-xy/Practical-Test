@@ -1,16 +1,208 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
+  ChevronDownIcon,
   MapPinIcon,
   PhoneIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
+// import { LangJson } from "configs";
 import { Assets } from "../assets";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const openPopupMenu = () => setPopupMenuShow(true);
+  const closePopupMenu = () => setPopupMenuShow(false);
+  const [showOptions, setShowOptions] = useState(false);
+  // const handleClick = () => {
+  //   setShowOptions(!showOptions);
+  // };
+  // const router = useRouter();
+  // const handleLocaleChange = (value) => {
+  //   console.log(router.locale);
+
+  //   router.push(router.route, router.asPath, {
+  //     locale: value,
+  //   });
+  // };
   return (
     <div className="relative w-full h-screen bg-white">
+      <div
+        className="nav top-0 fixed z-[50] w-full"
+        style={{ transition: "0.5s" }}
+      >
+        <div className="block w-full">
+          <div className="z-[10] absolute w-full before:-z-[1] before:absolute before:w-full before:h-full bg-white transition">
+            <div className="relative hidden max-w-5xl mx-auto cursor-pointer md:block top-2">
+              <div className="flex items-center justify-end">
+                <h2 className="text-xs text-black uppercase">En</h2>
+                <ChevronRightIcon className="w-4 h-4" />
+              </div>
+            </div>
+            <nav className="flex items-center justify-between w-full max-w-5xl px-4 py-3 mx-auto xl:px-0 md:py-2">
+              <div className="flex flex-row space-x-14">
+                <Link href="# ">
+                  <div className="relative md:w-[10rem] w-[10rem] h-full flex justify-center items-center">
+                    <Image src={Assets.Donaki} alt="Logo Litedex" />
+                  </div>
+                </Link>
+                <ul className="items-center hidden space-x-14 md:flex">
+                  <li>
+                    <Link href="# ">
+                      <a className="w-full py-3 text-sm font-bold text-black uppercase transition  hover:text-[#666795]">
+                        Home
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="# ">
+                      <a
+                        href=""
+                        className="flex flex-row items-center justify-center w-full py-3 text-sm text-black uppercase transition  hover:text-[#666795] font-body"
+                      >
+                        Link
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-4 h-4"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="# ">
+                      <a
+                        href=""
+                        className="flex flex-row items-center justify-center w-full py-3 text-sm text-black uppercase transition  hover:text-[#666795] font-body"
+                      >
+                        Link
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          class="w-4 h-4"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="# ">
+                      <a className="w-full py-3 text-sm text-black transition  hover:text-[#666795] font-body uppercase">
+                        Contact Us
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="hidden md:block">
+                <div className="flex flex-row space-x-4">
+                  <button className="w-[8rem] border-[0.1rem] border-[#23267A] py-2 rounded-md text-[#23267A] uppercase text-sm font-bold hover:scale-95 outline-none">
+                    Login
+                  </button>
+                  <button className="w-[8rem] py-2 rounded-md text-white bg-[#666795] uppercase font-body text-xs font-bold hover:scale-95 outline-none">
+                    Register
+                  </button>
+                </div>
+              </div>
+              {/* <div className="relative flex items-center">
+                <div className="hidden lg:block">
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center w-full h-full p-2 space-x-1 text-sm font-medium text-white rounded-md focus:outline-none "
+                    id="menu-button"
+                    aria-expanded="false"
+                    onClick={handleClick}
+                  >
+                    {LangJson.filter(
+                      (language) => language.code === router.locale
+                    ).map((language, index) => {
+                      return (
+                        <div
+                          className="flex flex-row items-center space-x-1"
+                          key={index}
+                        >
+                          <div className="relative">
+                            <Image
+                              src={language.icon}
+                              alt={`logo ${language.name}`}
+                              width={24}
+                              height={24}
+                            />
+                          </div>
+                          <span className="uppercase">{language.name}</span>
+                        </div>
+                      );
+                    })}
+                    <ChevronDownIcon className="w-5 h-5 flex items-center text-[#1EC01E]" />
+                  </button>
+                </div>
+                {showOptions && (
+                  <div
+                    className="absolute right-0 top-14 w-full  justify-center rounded-md  border border-[#1EC01E] bg-black/40 flex text-sm font-medium text-white focus:outline-none"
+                    role="menu"
+                  >
+                    <div>
+                      {LangJson.map((language) => (
+                        <div
+                          className="flex-row rounded-full cursor-pointer lg:p-3 lg:w-full lg:text-left lg:hover:bg-white/10 lg:rounded-xl"
+                          key={language.country_code}
+                          value={router.locale}
+                          onClick={() => {
+                            handleLocaleChange(language.code);
+                            // document.body.style.overflow = "visible";
+                          }}
+                        >
+                          <div className="flex space-x-1">
+                            <Image
+                              src={language.icon}
+                              alt="Translation Logo"
+                              height={24}
+                              width={24}
+                            />
+                            <span className="uppercase">{language.name}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div> */}
+              <button
+                type="button"
+                className="block lg:hidden "
+                onClick={() => {
+                  popupMenuShow ? closePopupMenu() : openPopupMenu();
+                }}
+              >
+                <div className="relative w-full h-full">
+                  <Image src={Assets.HamburgerBar} alt="Hamburger Bar" />
+                </div>
+              </button>
+              {/* <NavMobile
+                show={popupMenuShow}
+                onClick={() => {
+                  popupMenuShow ? closePopupMenu() : openPopupMenu();
+                }}
+              /> */}
+            </nav>
+          </div>
+        </div>
+      </div>
       <div className="flex items-center h-full px-4 mx-auto md:max-w-5xl">
         <div className="flex flex-col space-y-0 md:space-y-2">
           <h2 className="uppercase text-[#343434] text-[3rem] md:text-[4rem] font-fjalla tracking-wider">
