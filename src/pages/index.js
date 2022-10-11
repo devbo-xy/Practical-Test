@@ -227,7 +227,7 @@ export default function Home() {
         </div>
         {/* <Section /> */}
         <div className="flex items-center h-screen px-4 mx-auto md:max-w-5xl">
-          <div className="absolute left-0">
+          <div className="absolute left-0 hidden md:block">
             <Image src={Assets.Hero} alt="Hero" width={1500} height={800} />
           </div>
           <div className="absolute left-0 w-[50%] h-screen bg-gradient-to-r from-white/80 to-white/0 bg-blur" />
