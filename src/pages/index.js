@@ -3,35 +3,25 @@ import Link from "next/link";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronDownIcon,
   MapPinIcon,
   PhoneIcon,
 } from "@heroicons/react/24/solid";
 import Image from "next/image";
-// import { LangJson } from "configs";
 import { Assets } from "../assets";
-import { useRouter } from "next/router";
-import { Section } from "../components";
+import { NavMobile } from "../components/organisms/NavMobile";
 
 export default function Home() {
+  const [popupMenuShow, setPopupMenuShow] = useState(false);
   const openPopupMenu = () => setPopupMenuShow(true);
   const closePopupMenu = () => setPopupMenuShow(false);
   const [showOptions, setShowOptions] = useState(false);
   // const handleClick = () => {
   //   setShowOptions(!showOptions);
   // };
-  // const router = useRouter();
-  // const handleLocaleChange = (value) => {
-  //   console.log(router.locale);
-
-  //   router.push(router.route, router.asPath, {
-  //     locale: value,
-  //   });
-  // };
   return (
     <div className="relative w-full h-screen bg-white">
       <div
-        className="nav top-0 fixed z-[50] w-full"
+        className="nav top-0 fixed z-[100] w-full"
         style={{ transition: "0.5s" }}
       >
         <div className="block w-full">
@@ -197,24 +187,28 @@ export default function Home() {
                   />
                 </div>
               </button>
-              {/* <NavMobile
+              <NavMobile
                 show={popupMenuShow}
                 onClick={() => {
                   popupMenuShow ? closePopupMenu() : openPopupMenu();
                 }}
-              /> */}
+              />
             </nav>
           </div>
         </div>
       </div>
       {/* <Section /> */}
-      <div className="flex items-center h-full px-4 mx-auto md:max-w-5xl">
-        <div className="flex flex-col space-y-0 md:space-y-2">
+      <div className="flex items-center h-screen px-4 mx-auto md:max-w-5xl">
+        <div className="absolute left-0">
+          <Image src={Assets.Hero} alt="Hero" width={1500} height={800} />
+        </div>
+        <div className="absolute left-0 w-[50%] h-screen bg-gradient-to-r from-white/80 to-white/0 bg-blur" />
+        <div className="z-20 flex flex-col mt-10 space-y-0 md:space-y-2">
           <h2 className="uppercase text-[#343434] text-[3rem] md:text-[4rem] font-fjalla tracking-wider">
             Who Are We?
           </h2>
           <div className="flex flex-col space-y-6">
-            <p className="font-body text-[#525252] text-lg md:w-[50%] tracking-wide leading-6 hidden md:block">
+            <p className="font-body text-[#525252] text-base md:w-[50%] tracking-wide leading-6 hidden md:block">
               Donaki is dolor sit amet, consectetur adisipicing elit, sed do
               euismod empor incididunt ut labore et dolore magna aliqua. Ut enim
               ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -276,8 +270,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-[99.5%] bg-white border-2 h-[18rem] flex items-center px-4 md:px-10">
-            <div className="flex flex-col space-y-2">
+          <div className="w-[99.5%] bg-white h-[18rem] flex items-center px-4 md:px-10 overflow-hidden relative">
+            <div className="absolute left-0">
+              <Image src={Assets.About} alt="Hero" width={2000} height={800} />
+            </div>
+            <div className="absolute left-0 w-[60%] h-screen bg-gradient-to-r from-white/100 to-white/0 " />
+            <div className="z-20 flex flex-col space-y-2">
               <h2 className="tracking-wider text-[#343434] uppercase font-fjalla text-[3rem] md:text-5xl">
                 About us
               </h2>

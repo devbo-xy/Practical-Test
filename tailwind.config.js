@@ -7,6 +7,9 @@ module.exports = {
         fjalla: ["Fjalla One"],
         body: ["Nunito", "sans-serif"],
       },
+      backgroundImage: {
+        imgBanner: "url('/public/assets/images/imgHero.svg')",
+      },
     },
     plugins: [],
   },

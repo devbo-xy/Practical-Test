@@ -8,3 +8,5 @@ export { default as Zara } from "./logoZara.png";
 export { default as Blog } from "./logoBlog.png";
 export { default as HamburgerBar } from "./HamburgerBar.svg";
 export { default as CloseBar } from "./CloseBar.svg";
+export { default as Hero } from "./imgHero.jpeg";
+export { default as About } from "./imgAbout.jpeg";
