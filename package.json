@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build:tailwind": "cross-env NODE_ENV=production tailwindcss -i src/assets/styles/globals.css -o src/assets/styles/build.css --minify",
+    "build": "cross-env NODE_ENV=production tailwindcss -i src/assets/styles/globals.css -o src/assets/styles/build.css --minify && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,7 +15,11 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
     "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1"
+    "eslint-config-next": "12.3.1",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
   }
 }
