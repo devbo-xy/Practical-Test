@@ -45,11 +45,6 @@ export default function Home() {
           ],
           site_name: "Practical Test",
         }}
-        twitter={{
-          handle: "@handle",
-          site: "@site",
-          cardType: "summary_large_image",
-        }}
       />
 
       <div className="relative w-full h-screen bg-white">
