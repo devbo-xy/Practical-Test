@@ -371,7 +371,7 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Your E-Mail"
-                    className="p-2 text-xs font-bold uppercase bg-transparent border-[0.1rem] border-[#848484] outline-none placeholder-[#848484]"
+                    className="p-2 text-xs font-bold uppercase bg-transparent border-[0.1rem] border-[#848484] outline-none placeholder-[#848484] text-white"
                   />
                 </div>
                 <button className="bg-[#414141] w-[8rem] py-2 border-[0.1rem] border-[#414141] text-[#848484] uppercase font-body text-xs font-bold hover:scale-95 outline-none">
